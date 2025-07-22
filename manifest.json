@@ -1,11 +1,9 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
-	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+  "id": "vibe-writing-ai",
+  "name": "Vibe Writing AI",
+  "version": "0.1.0",
+  "minAppVersion": "0.15.0",
+  "description": "AI agent that vectorizes your vault and rewrites text in a vibey style.",
+  "author": "AI Assistant",
+  "isDesktopOnly": false
 }
