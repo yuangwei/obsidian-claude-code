@@ -2,7 +2,7 @@
 	"name": "obsidian-claude-code",
 	"version": "1.0.0",
 	"description": "Claude Code for Obsidian (https://obsidian.md)",
-	"main": "dist/main.js",
+	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
@@ -10,7 +10,12 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "0BSD",
+	"license": "MIT",
+	"dependencies": {
+		"@xterm/addon-fit": "^0.10.0",
+		"@xterm/xterm": "^5.5.0",
+		"node-pty": "^1.0.0"
+	},
 	"devDependencies": {
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "5.29.0",

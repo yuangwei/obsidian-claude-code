@@ -14,7 +14,7 @@ const context = await esbuild.context({
 	banner: {
 		js: banner,
 	},
-	entryPoints: ["src/main.ts"],
+	entryPoints: ["main.ts"],
 	bundle: true,
 	external: [
 		"obsidian",
@@ -30,6 +30,7 @@ const context = await esbuild.context({
 		"@lezer/common",
 		"@lezer/highlight",
 		"@lezer/lr",
+		"child_process",
 		...builtins,
 	],
 	format: "cjs",
@@ -37,7 +38,7 @@ const context = await esbuild.context({
 	logLevel: "info",
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
-	outfile: "dist/main.js",
+	outfile: "main.js",
 	minify: prod,
 });
 

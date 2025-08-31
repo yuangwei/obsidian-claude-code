@@ -1,8 +1,85 @@
-/*
+/* Claude Code Terminal Styles */
+.claude-code-terminal-container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-primary);
+  overflow: hidden;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.claude-code-terminal-container .xterm {
+  height: 100% !important;
+  width: 100% !important;
+}
 
-If your plugin does not need CSS, delete this file.
+.claude-code-terminal-container .xterm-viewport {
+  background-color: var(--background-primary) !important;
+}
 
-*/
+.claude-code-terminal-container .xterm-screen {
+  background-color: var(--background-primary) !important;
+}
+
+.claude-code-terminal-container .xterm-cursor {
+  background-color: var(--text-accent) !important;
+}
+
+.claude-code-terminal-container .xterm-selection {
+  background-color: var(--text-selection) !important;
+}
+
+/* Terminal scrollbar styling */
+.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Make terminal responsive */
+.workspace-leaf-content[data-type="claude-code-terminal"] {
+  padding: 0;
+}
+
+.workspace-leaf-content[data-type="claude-code-terminal"] .view-content {
+  padding: 0;
+  height: 100%;
+}
+
+.workspace-leaf-content[data-type="claude-code-terminal"] .view-header {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Restart button styling */
+.claude-code-restart-btn {
+  background: transparent;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  margin-left: auto;
+  transition: all 0.2s ease;
+}
+
+.claude-code-restart-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+  border-color: var(--text-accent);
+}
+
+.claude-code-restart-btn:active {
+  transform: scale(0.95);
+}
