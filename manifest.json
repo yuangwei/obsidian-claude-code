@@ -1,9 +1,9 @@
 {
-  "id": "vibe-writing-ai",
-  "name": "Vibe Writing AI",
-  "version": "0.1.0",
-  "minAppVersion": "0.15.0",
-  "description": "AI agent that vectorizes your vault and rewrites text in a vibey style.",
-  "author": "AI Assistant",
-  "isDesktopOnly": false
+	"id": "claude-code",
+	"name": "Claude Code",
+	"version": "0.1.0",
+	"minAppVersion": "0.15.0",
+	"description": "Claude Code for Obsidian.",
+	"author": "Yuang Wei",
+	"isDesktopOnly": false
 }
