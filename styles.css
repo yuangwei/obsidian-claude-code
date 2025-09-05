@@ -1,85 +1,78 @@
-/* Claude Code Terminal Styles */
 .claude-code-terminal-container {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: var(--background-primary);
+  background: var(--background-primary);
+  position: relative;
   overflow: hidden;
 }
 
 .claude-code-terminal-container .xterm {
-  height: 100% !important;
-  width: 100% !important;
+  padding: 8px;
+  height: calc(100% - 16px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.claude-code-terminal-container .xterm-viewport {
-  background-color: var(--background-primary) !important;
-}
-
-.claude-code-terminal-container .xterm-screen {
-  background-color: var(--background-primary) !important;
-}
-
-.claude-code-terminal-container .xterm-cursor {
-  background-color: var(--text-accent) !important;
-}
-
-.claude-code-terminal-container .xterm-selection {
-  background-color: var(--text-selection) !important;
-}
-
-/* Terminal scrollbar styling */
-.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar {
-  width: 8px;
-}
-
-.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-track {
-  background: var(--background-secondary);
-}
-
-.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-thumb {
-  background: var(--background-modifier-border);
-  border-radius: 4px;
-}
-
-.claude-code-terminal-container .xterm-viewport::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
-}
-
-/* Make terminal responsive */
-.workspace-leaf-content[data-type="claude-code-terminal"] {
-  padding: 0;
-}
-
-.workspace-leaf-content[data-type="claude-code-terminal"] .view-content {
-  padding: 0;
+.claude-code-terminal-container .xterm .xterm-screen {
+  width: 100%;
   height: 100%;
 }
 
-.workspace-leaf-content[data-type="claude-code-terminal"] .view-header {
-  border-bottom: 1px solid var(--background-modifier-border);
+.claude-code-terminal-container .xterm .xterm-helpers {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Restart button styling */
-.claude-code-restart-btn {
-  background: transparent;
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 4px;
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: 16px;
-  padding: 4px 8px;
-  margin-left: auto;
-  transition: all 0.2s ease;
+.claude-code-terminal-container .xterm-viewport {
+  background: var(--background-primary) !important;
 }
 
-.claude-code-restart-btn:hover {
-  background: var(--background-modifier-hover);
+.claude-code-terminal-container .xterm-screen {
+  background: var(--background-primary) !important;
+}
+
+.claude-code-ribbon-icon {
+  color: var(--icon-color);
+}
+
+.claude-code-ribbon-icon:hover {
+  color: var(--icon-color-hover);
+}
+
+/* Theme-aware terminal colors */
+.theme-dark .claude-code-terminal-container .xterm {
   color: var(--text-normal);
-  border-color: var(--text-accent);
 }
 
-.claude-code-restart-btn:active {
-  transform: scale(0.95);
+.theme-light .claude-code-terminal-container .xterm {
+  color: var(--text-normal);
+}
+
+/* Hide unwanted textarea elements except the xterm helper */
+.claude-code-terminal-container textarea:not(.xterm-helper-textarea) {
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Ensure xterm helper textarea is properly positioned */
+.claude-code-terminal-container .xterm-helper-textarea {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Focus styles */
+.claude-code-terminal-container:focus-within {
+  outline: none;
+}
+
+.claude-code-terminal-container .xterm:focus {
+  outline: none;
 }
